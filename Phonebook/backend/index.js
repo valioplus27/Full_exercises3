@@ -1,6 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
+const Person = require('./models/person');
 const app = express();
+
 
 app.use(express.json());
 
@@ -92,6 +95,9 @@ app.post('/api/persons', (req, res) => {
 
     persons = persons.concat(newPerson);
     res.json(newPerson);
+});
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3001
