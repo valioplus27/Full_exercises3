@@ -14,7 +14,7 @@ app.use(express.static('dist'))
 let persons = [
     { 
       "id": "1",
-      "name": "Valtter Reims", 
+      "name": "Arto Hellas", 
       "number": "040-123456"
     },
     { 
