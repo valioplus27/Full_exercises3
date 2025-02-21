@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+.notification {
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.notification.success {
+  color: green;
+  background: lightgrey;
+}
+
+.notification.error {
+  color: red;
+  background: lightgrey;
+}

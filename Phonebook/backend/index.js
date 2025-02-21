@@ -10,6 +10,7 @@ morgan.token('body', (req) => JSON.stringify(req.body));
 // Configure morgan to use the custom token in the log format
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
 //app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.use(express.static('dist'))
 let persons = [
     { 
       "id": "1",
