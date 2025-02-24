@@ -3,11 +3,29 @@ import axios from 'axios'
 const baseUrl = '/api/persons'
 
 const getAll = () => {
-  return axios.get(baseUrl)
+  return axios
+    .get(baseUrl)
+    .then(response => {
+      console.log('Data received:', response.data)
+      return response
+    })
+    .catch(error => {
+      console.error('Network error:', error.message)
+      throw error
+    })
 }
 
 const create = newObject => {
-  return axios.post(baseUrl, newObject)
+  return axios
+    .post(baseUrl, newObject)
+    .then(response => {
+      console.log('Create successful:', response.data)
+      return response
+    })
+    .catch(error => {
+      console.error('Create error:', error.response?.data || error.message)
+      throw error
+    })
 }
 
 const update = (id, newObject) => {
